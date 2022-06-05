@@ -1,13 +1,15 @@
 <nav class='flex items-center justify-between flex-wrap bg-teal-500 p-6 mb-6'>
   <div class='flex items-center flex-shrink-0 text-white'>
     <%= render 'partial/icons/money' %>
-    <%= link_to t('application.title'), root_path, class: 'font-semibold text-xl tracking-tight pt-1'%>
+    <%= link_to t('application.title'), root_path, class: 'font-semibold text-xl tracking-tight pt-1' %>
   </div>
   <div class='w-full block flex-grow lg:flex lg:items-center lg:w-auto'>
     <div class='ml-auto'>
       <% if user_signed_in? %>
-        <%= link_to t('savings.button.create'), new_saving_path, class: 'inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0'%>
-        <%= link_to t('users.logout'), destroy_user_session_path, method: :delete, class: 'inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0'%>
+        <%= link_to t('savings.button.create'), new_saving_path,
+                    class: 'inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0' %>
+        <%= link_to t('users.logout'), destroy_user_session_path, method: :delete,
+                                                                  class: 'inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0' %>
       <% end %>
     </div>
   </div>

@@ -64,7 +64,7 @@ gem 'ransack'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'rubocop-rspec'
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
@@ -72,6 +72,7 @@ group :development do
   gem 'annotate'
   gem 'brakeman', require: false
   gem 'bundler-audit', require: false
+  gem 'erb_lint', require: false
   gem 'rubocop-rails', require: false
   gem 'web-console'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]

@@ -1,6 +1,6 @@
 <% if resource.errors.any? %>
   <div class='w-11/12 m-auto p-4 text-sm text-rose-700 bg-rose-100 rounded-lg mb-6'>
-    <%= render 'devise/shared/error_messages', resource: resource %>
+    <%= render 'devise/shared/error_messages', resource: %>
   </div>
 <% end %>
 <div class='w-11/12 m-auto mt-6'>
@@ -10,29 +10,34 @@
       <div class='p-4'>
         <div class='mb-6'>
           <label for='name' class='block mb-2 text-sm font-medium text-gray-900'><%= f.label :name %></label>
-          <%= f.text_field :name, autofocus: true, autocomplete: 'name', class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', required: true %>
+          <%= f.text_field :name, autofocus: true, autocomplete: 'name',
+                                  class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', required: true %>
         </div>
         <div class='mb-6'>
           <label for='email' class='block mb-2 text-sm font-medium text-gray-900'><%= f.label :email %></label>
-          <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: 'test@example.com', required: true %>
+          <%= f.email_field :email, autofocus: true, autocomplete: 'email',
+                                    class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: 'test@example.com', required: true %>
         </div>
         <div class='mb-6'>
           <label for='password' class='block mb-2 text-sm font-medium text-gray-900 '><%= f.label :password %></label>
           <% if @minimum_password_length %>
             <em class='text-rose-500'>(<%= t('users.views.min_password_length') %>)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: 'new-password', class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: '********', required: true %>
+          <% end %><br>
+          <%= f.password_field :password, autocomplete: 'new-password',
+                                          class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: '********', required: true %>
         </div>
         <div class='mb-6'>
           <label for='password' class='block mb-2 text-sm font-medium text-gray-900 '><%= f.label :password_confirmation %></label>
           <% if @minimum_password_length %>
             <em class='text-rose-500'>(<%= t('users.views.min_password_length') %>)</em>
-          <% end %><br />
-          <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: '********', required: true %>
+          <% end %><br>
+          <%= f.password_field :password_confirmation, autocomplete: 'new-password',
+                                                       class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: '********', required: true %>
         </div>
 
         <div class='mb-6'>
-          <%= f.submit 'サインアップ', class: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer'%>
+          <%= f.submit 'サインアップ',
+                       class: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer' %>
         </div>
 
         <% if devise_mapping.rememberable? %>
@@ -49,4 +54,3 @@
     <%= render 'devise/shared/links' %>
   </div>
 </div>
-

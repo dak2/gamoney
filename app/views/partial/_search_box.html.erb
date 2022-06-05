@@ -4,17 +4,22 @@
     <%= search_form_for @q, url: root_path do |f| %>
 
       <%= f.label :label_cont, 'ラベル', class: 'mb-2 text-sm font-medium text-gray-900' %>
-      <%= f.search_field :label_cont, class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 p-2.5' %>
+      <%= f.search_field :label_cont,
+                         class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 p-2.5' %>
 
       <%= f.label :money_eq, '金額', class: 'mb-2 text-sm font-medium text-gray-900' %>
-      <%= f.search_field :money_eq, class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 p-2.5' %>
+      <%= f.search_field :money_eq,
+                         class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 p-2.5' %>
 
       <%= f.label :category_id_eq, 'カテゴリ', class: 'mb-2 text-sm font-medium text-gray-900' %>
-      <%= f.select :category_id_eq, options_from_collection_for_select(Category.all, :id, :label_to_ja, @q.category_id_eq), {}, { class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 w-44 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 p-2.5' } %>
+      <%= f.select :category_id_eq,
+                   options_from_collection_for_select(Category.all, :id, :label_to_ja, @q.category_id_eq), {}, { class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 w-44 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 p-2.5' } %>
 
-      <%= f.submit t('savings.search_box.search'), class: 'cursor-pointer shadow-sm text-blue-500 bg-white border border-blue-500 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 hover:text-white hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 p-2.5' %>
+      <%= f.submit t('savings.search_box.search'),
+                   class: 'cursor-pointer shadow-sm text-blue-500 bg-white border border-blue-500 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 hover:text-white hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 p-2.5' %>
 
-      <%= link_to t('savings.search_box.clear'), root_path, class: 'shadow-sm text-gray-500 bg-white border border-gray-500 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 hover:text-white hover:bg-gray-500 focus:ring-2 focus:ring-gray-500', style: 'padding: 11.5px' %>
+      <%= link_to t('savings.search_box.clear'), root_path,
+                  class: 'shadow-sm text-gray-500 bg-white border border-gray-500 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 hover:text-white hover:bg-gray-500 focus:ring-2 focus:ring-gray-500', style: 'padding: 11.5px' %>
     <% end %>
   </div>
 </div>

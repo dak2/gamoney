@@ -9,7 +9,7 @@
 
   <div class='shadow-xl overflow-hidden border rounded-md mb-6'>
     <h2 class='py-3 px-5 bg-gray-100 border-b'>節約額一覧<h2>
-    <%= turbo_frame_tag "savings-list" do %>
+    <%= turbo_frame_tag 'savings-list' do %>
       <div class='p-4'>
         <table class='table-auto w-full'>
           <thead>
@@ -28,8 +28,10 @@
                 <td class='border px-4 py-2'><%= saving.money %></td>
                 <td class='border px-4 py-2'><%= saving.created_at.strftime('%Y/%m/%d') %></td>
                 <td class='w-56	text-right'>
-                  <%= link_to t('savings.button.update'), edit_saving_path(saving.id), class: 'cursor-pointer focus:outline-none text-teal-500 bg-white ring-1 ring-teal-500	hover:text-white hover:bg-teal-500 focus:ring-2 focus:ring-green-300 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2'%>
-                  <%= button_to t('savings.button.destroy'), saving_path(saving.id), method: :delete, class: 'cursor-pointer focus:outline-none ring-1 ring-rose-500	text-rose-500 bg-white hover:text-white hover:bg-rose-500 focus:ring-2 focus:ring-rose-300 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2'%>
+                  <%= link_to t('savings.button.update'), edit_saving_path(saving.id),
+                              class: 'cursor-pointer focus:outline-none text-teal-500 bg-white ring-1 ring-teal-500	hover:text-white hover:bg-teal-500 focus:ring-2 focus:ring-green-300 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2' %>
+                  <%= button_to t('savings.button.destroy'), saving_path(saving.id), method: :delete,
+                                                                                     class: 'cursor-pointer focus:outline-none ring-1 ring-rose-500	text-rose-500 bg-white hover:text-white hover:bg-rose-500 focus:ring-2 focus:ring-rose-300 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2' %>
                 </td>
               </tr>
             <% end %>

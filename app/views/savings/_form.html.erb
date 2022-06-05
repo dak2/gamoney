@@ -15,20 +15,24 @@
 
   <div class='mb-3'>
     <%= form.label '項目', class: 'block mb-2 text-sm font-medium text-gray-700' %>
-    <%= form.text_field :label, class: 'bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: '買い物での節約' %>
+    <%= form.text_field :label,
+                        class: 'bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: '買い物での節約' %>
   </div>
 
   <div class='mb-3'>
     <%= form.label 'カテゴリ', class: 'block mb-2 text-sm font-medium text-gray-700' %>
-    <%= form.collection_select :category_id, Category.all, :id, :label_to_ja, {}, { class: 'bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5' } %>
+    <%= form.collection_select :category_id, Category.all, :id, :label_to_ja, {},
+                               { class: 'bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5' } %>
   </div>
 
   <div class='mb-3'>
     <%= form.label '金額', class: 'block mb-2 text-sm font-medium text-gray-700' %>
-    <%= form.number_field :money, class: 'bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: '1000' %>
+    <%= form.number_field :money,
+                          class: 'bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: '1000' %>
   </div>
 
   <div class='mt-6'>
-    <%= form.submit '登録する', class: 'cursor-pointer focus:outline-none text-white bg-teal-500 hover:bg-teal-600 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
+    <%= form.submit '登録する',
+                    class: 'cursor-pointer focus:outline-none text-white bg-teal-500 hover:bg-teal-600 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2' %>
   </div>
 <% end %>
